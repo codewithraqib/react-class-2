@@ -4,5 +4,9 @@ import Header from '../common/Header';
 
 export default function WelcomePage() {
   const spans = ['Home', 'About us', 'Contact us'];
-  return <div className="home-welcome-page">{/* <Header links={spans} /> */}</div>;
+  return (
+    <div className="home-welcome-page">
+      <Header links={spans} />
+    </div>
+  );
 }
