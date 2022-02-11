@@ -7,6 +7,7 @@ export default function WelcomePage() {
   return (
     <div className="home-welcome-page">
       <Header links={spans} />
+  <Header links={spans} />
     </div>
   );
 }
