@@ -1,0 +1,31 @@
+.main-content-parent {
+  .about-us-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    .image-container {
+      display: flex;
+      align-items: center;
+      img {
+        width: 40vw;
+        border-radius: 8px;
+      }
+    }
+
+    .desc-container {
+      text-align: left;
+      width: 45%;
+      span {
+      }
+    }
+  }
+
+  .service-cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}

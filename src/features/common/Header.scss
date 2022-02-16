@@ -1,7 +1,7 @@
 .header-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: black;
+  background-color: #eee;
   padding: 10px 5vw;
 
   .logo-container {
@@ -17,13 +17,19 @@
     justify-content: flex-end;
 
     .links-container-inner {
+      .link-item {
+        padding: 10px;
+        background-color: grey;
+        margin-left: 10px;
+        border-radius: 8px;
+        color: white;
+      }
+
+      .link-item:hover {
+        cursor: pointer;
+        background-color: black;
+        color: red;
+      }
     }
   }
-}
-
-.link-item {
-  padding: 10px;
-  background-color: red;
-  margin-left: 10px;
-  border-radius: 8px;
 }
