@@ -4,7 +4,7 @@ import React from 'react';
 // import Icon from '@mui/material/Icon';
 import { FaTwitter, FaDesktop, FaMobile, FaBook, FaChartBar, FaIceCream } from 'react-icons/fa';
 
-class ServiceCard extends React.PureComponent {
+class MemberCard extends React.PureComponent {
   getIcon = icon => {
     switch (icon) {
       case 'computer':
@@ -22,21 +22,24 @@ class ServiceCard extends React.PureComponent {
 
   render() {
     return (
-      <div className="card service-card">
+      <div className="card member-card">
+        <img src="images/member.jpg" alt="member" />
         {/* <AccessAlarm /> */}
 
-        <div className="icon">
-          {this.props.service && this.props.service.icon && this.getIcon(this.props.service.icon)}
-        </div>
-        <div className="service">
-          <span className="sub-title">{this.props.service.name}</span>
-        </div>
-        <div className="desc">
-          <span>{this.props.service.desc}</span>
+        <div className="overlay">
+          <div className="icon">
+            {this.props.service && this.props.service.icon && this.getIcon(this.props.service.icon)}
+          </div>
+          <div className="service">
+            <span className="sub-title">{this.props.service.name}</span>
+          </div>
+          <div className="desc">
+            <span>{this.props.service.desc}</span>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-export default ServiceCard;
+export default MemberCard;

@@ -37,21 +37,19 @@ class WelcomePage extends React.PureComponent {
       members: [
         {
           name: 'Sajad Ahmad',
-          desc: 'Front End Developer',
+          desc: 'Frontend Developer',
         },
         {
-          name: 'Mobile App Development',
-          desc: 'We Develop Custom Complex Mobile Apps for both Platforms - Android and IOS',
+          name: 'Raqib',
+          desc: 'Fronend Developer',
         },
         {
-          name: 'Certification Courses',
-          desc:
-            'We Teach C | C++ | JAVA | PHP | JavaScript | Android Development | Flutter Development',
+          name: 'Junaid',
+          desc: 'QA',
         },
         {
-          name: 'Services',
-          desc:
-            'We Offer Custom Requiremnt Softwares- Inventor, Library etc | Branding and Promotion of Business Units | SMS Service',
+          name: 'Tanveer',
+          desc: 'Full Stack Developer',
         },
       ],
     };
@@ -77,6 +75,7 @@ class WelcomePage extends React.PureComponent {
               'We offer a lot of services in the field of IT which satisfy our customers and help our customers to grow.'
             }
             services={this.state.services}
+            // image={'images/hero-back.jpg'}
           />
 
           <MainStructureComponent
@@ -84,6 +83,7 @@ class WelcomePage extends React.PureComponent {
             description={
               'We are 4 members in a team working in dynamic and different spheres of development.'
             }
+            // image={'images/hero-back.jpg'}
             members={this.state.members}
           />
         </div>

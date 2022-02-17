@@ -1,4 +1,5 @@
 import React from 'react';
+import { MemberCard } from '../common';
 import ServiceCard from '../common/ServiceCard';
 
 class MainStructureComponent extends React.PureComponent {
@@ -21,15 +22,21 @@ class MainStructureComponent extends React.PureComponent {
 
           <div className="desc-container">
             <div>
-              <div>
-                <span className="title">{props.title ? props.title : ''}</span>
-              </div>
-              <div className="dot-line-container">
-                <div className="dot"></div>
-                <div className="line"></div>
-              </div>
+              {props.title ? (
+                <div className="title-underline">
+                  <div>
+                    <span className="title">{props.title}</span>
+                  </div>
+
+                  <div className="dot-line-container">
+                    <div className="dot"></div>
+                    <div className="line"></div>
+                  </div>
+                </div>
+              ) : null}
             </div>
-            <span>{props.description ? props.description : ''}</span>
+
+            {props.description && <span>{props.description}</span>}
           </div>
         </div>
 
@@ -44,7 +51,7 @@ class MainStructureComponent extends React.PureComponent {
         {props.members ? (
           <div className="service-cards-container">
             {props.members.map(member => {
-              return <ServiceCard service={member} />;
+              return <MemberCard service={member} />;
             })}
           </div>
         ) : null}

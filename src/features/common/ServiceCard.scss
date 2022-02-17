@@ -1,1 +1,32 @@
+.service-card {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
 
+  .icon {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .service {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    // color: white;
+  }
+
+  .desc {
+    text-align: left;
+    // color: white;
+  }
+}
+
+.service-card:nth-child(even) {
+  background-color: #715f69;
+}
+.service-card:nth-child(odd) {
+  background-color: #e2a599;
+}
