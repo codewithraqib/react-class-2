@@ -55,6 +55,14 @@ class MainStructureComponent extends React.PureComponent {
             })}
           </div>
         ) : null}
+
+        {props.projects ? (
+          <div className="service-cards-container">
+            {props.projects.map(project => {
+              return <MemberCard service={project} />;
+            })}
+          </div>
+        ) : null}
       </div>
     );
   }

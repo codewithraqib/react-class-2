@@ -52,6 +52,25 @@ class WelcomePage extends React.PureComponent {
           desc: 'Full Stack Developer',
         },
       ],
+
+      projects: [
+        {
+          name: 'EaseMySchool',
+          desc: 'A School Management System',
+        },
+        {
+          name: 'SKUAST',
+          desc: 'Farmer Farm Management',
+        },
+        {
+          name: 'Dolphin Website',
+          desc: 'A School Website',
+        },
+        {
+          name: 'Cheezymezy',
+          desc: 'Restaurant Aggerigator System',
+        },
+      ],
     };
   }
   componentDidMount() {
@@ -85,6 +104,16 @@ class WelcomePage extends React.PureComponent {
             }
             // image={'images/hero-back.jpg'}
             members={this.state.members}
+          />
+
+          <MainStructureComponent
+            title="Our Projects | Products
+"
+            description={
+              'We have developed a lot of products for ourselves and more for clients in which some prominent ones are -'
+            }
+            // image={'images/hero-back.jpg'}
+            projects={this.state.projects}
           />
         </div>
 
