@@ -1,6 +1,5 @@
 import React from 'react';
-import { MemberCard } from '../common';
-import ServiceCard from '../common/ServiceCard';
+import { MemberCard, ProjectCard, ServiceCard } from '../common';
 
 class MainStructureComponent extends React.PureComponent {
   constructor(props) {
@@ -57,9 +56,9 @@ class MainStructureComponent extends React.PureComponent {
         ) : null}
 
         {props.projects ? (
-          <div className="service-cards-container">
+          <div className="project-cards-container">
             {props.projects.map(project => {
-              return <MemberCard service={project} />;
+              return <ProjectCard project={project} />;
             })}
           </div>
         ) : null}

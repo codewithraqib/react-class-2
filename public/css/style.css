@@ -3,8 +3,28 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url('../fonts/Poppins-Light.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('../fonts/Poppins-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('../fonts/Poppins-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Poppins-Light', sans-serif;
   position: relative;
 }
 
@@ -26,22 +46,32 @@ a:hover {
   font-size: 22px;
   font-weight: bold;
   line-height: 1.1;
+  font-family: 'Poppins-Light', sans-serif;
 }
 
 .general-title {
   font-size: 18px;
   font-weight: bold;
   line-height: 1.1;
+  font-family: 'Poppins-Light', sans-serif;
 }
 
 .general-text {
   font-size: 18px;
   line-height: 1.2;
+  font-family: 'Poppins-Light', sans-serif;
+}
+
+.bold-text {
+  font-size: 18px;
+  line-height: 1.2;
+  font-family: 'Poppins-Bold', sans-serif;
 }
 
 .small-text {
   font-size: 14px;
   line-height: 1.2;
+  font-family: 'Poppins-Light', sans-serif;
 }
 
 .button {
@@ -52,18 +82,22 @@ a:hover {
   justify-content: center;
   align-items: center;
   width: 30%;
+  font-family: 'Poppins-Light', sans-serif;
 }
 
 .white-text {
   color: #ffffff;
+  font-family: 'Poppins-Light', sans-serif;
 }
 
 .red-text {
   color: red;
+  font-family: 'Poppins-Light', sans-serif;
 }
 
 .blue-text {
   color: blue;
+  font-family: 'Poppins-Light', sans-serif;
 }
 
 .content-wrapper {

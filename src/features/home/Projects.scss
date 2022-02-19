@@ -1,0 +1,41 @@
+.project-card {
+  display: flex;
+  min-width: 40vw;
+  text-align: start;
+  justify-content: space-between;
+  padding: 50px 20px;
+  background-color: #f9f9ff;
+  box-shadow: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  &:hover {
+    background-color: rgb(144, 172, 209);
+    transition: all 200ms ease-in;
+  }
+
+  .name-description {
+    .sub-title {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .general-text {
+      color: #777;
+      font-size: 15px;
+    }
+  }
+
+  .brand {
+    display: flex;
+    // background-color: red;
+    align-items: center;
+
+    .inner {
+      background-color: #fff;
+      color: #111;
+      padding: 12px 10px;
+      border-radius: 50px;
+      border: 1px solid rgb(144, 172, 209);
+    }
+  }
+}
