@@ -1,4 +1,5 @@
 import React from 'react';
+import { Reviews } from '../common';
 import HeroSection from '../common/HeroSection';
 import MainStructureComponent from './MainStructureComponent';
 
@@ -71,6 +72,29 @@ class WelcomePage extends React.PureComponent {
           desc: 'Restaurant Aggerigator System',
         },
       ],
+
+      reviews: [
+        {
+          name: 'EaseMySchool',
+          rating: 4,
+          desc: 'A School Management System',
+        },
+        {
+          name: 'SKUAST',
+          rating: 3,
+          desc: 'Farmer Farm Management',
+        },
+        {
+          name: 'Dolphin Website',
+          rating: 5,
+          desc: 'A School Website',
+        },
+        {
+          name: 'Cheezymezy',
+          rating: 2,
+          desc: 'Restaurant Aggerigator System',
+        },
+      ],
     };
   }
   componentDidMount() {
@@ -115,6 +139,8 @@ class WelcomePage extends React.PureComponent {
             // image={'images/hero-back.jpg'}
             projects={this.state.projects}
           />
+
+          <Reviews reviews={this.state.reviews} />
         </div>
 
         {/* <div onClick={() => this.props.history.push('/projects')}>Click me</div> */}
