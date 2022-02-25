@@ -1,0 +1,13 @@
+.reviews-container {
+  display: flex;
+
+  .review-card {
+    // min-width: 80vw;
+
+    .rating {
+      .stars {
+        width: 100px;
+      }
+    }
+  }
+}

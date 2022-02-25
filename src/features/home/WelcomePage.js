@@ -76,22 +76,27 @@ class WelcomePage extends React.PureComponent {
       reviews: [
         {
           name: 'EaseMySchool',
-          rating: 4,
+          rating: 1,
           desc: 'A School Management System',
         },
         {
           name: 'SKUAST',
-          rating: 3,
+          rating: 2,
           desc: 'Farmer Farm Management',
         },
         {
           name: 'Dolphin Website',
-          rating: 5,
+          rating: 3,
           desc: 'A School Website',
         },
         {
           name: 'Cheezymezy',
-          rating: 2,
+          rating: 4,
+          desc: 'Restaurant Aggerigator System',
+        },
+        {
+          name: 'Somethig',
+          rating: 5,
           desc: 'Restaurant Aggerigator System',
         },
       ],
