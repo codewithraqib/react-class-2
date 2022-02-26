@@ -5,3 +5,4 @@ export { default as ServiceCard } from './ServiceCard';
 export { default as MemberCard } from './MemberCard';
 export { default as ProjectCard } from './ProjectCard';
 export { default as Reviews } from './Reviews';
+export { default as ContactSection } from './ContactSection';

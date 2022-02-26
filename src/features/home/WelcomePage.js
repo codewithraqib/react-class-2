@@ -1,5 +1,5 @@
 import React from 'react';
-import { Reviews } from '../common';
+import { ContactSection, Reviews } from '../common';
 import HeroSection from '../common/HeroSection';
 import MainStructureComponent from './MainStructureComponent';
 
@@ -147,6 +147,8 @@ class WelcomePage extends React.PureComponent {
 
           <Reviews reviews={this.state.reviews} />
         </div>
+
+        <ContactSection />
 
         {/* <div onClick={() => this.props.history.push('/projects')}>Click me</div> */}
       </div>

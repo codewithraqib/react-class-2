@@ -1,0 +1,48 @@
+.contact-section-container {
+  background-color: orangered;
+  padding: 50px 40px;
+  .form-header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    .numbers {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      span {
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+    }
+
+    .address {
+      display: flex;
+      align-items: center;
+    }
+
+    .form {
+      form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+          margin-bottom: 10px;
+          height: 30px;
+          padding: 10px;
+        }
+
+        .submit {
+          height: 40px;
+          background-color: blue;
+          color: white;
+        }
+      }
+    }
+  }
+}
