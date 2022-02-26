@@ -5,7 +5,7 @@ class ContactSection extends React.PureComponent {
     return (
       <div className="contact-section-container">
         <div className="title">
-          <span>Conatct Us</span>
+          <span>Contact Us</span>
         </div>
 
         <div className="desc">
@@ -21,15 +21,15 @@ class ContactSection extends React.PureComponent {
 
         <div className="contact-form">
           <div className="numbers">
-            <span>919393939933</span>
-            <span>8876567654567</span>
-            <span>8765435678765</span>
+            <span>+91 9906099060</span>
+            <span>+91 9797097970</span>
+            <span>+91 9419094190</span>
           </div>
           <div className="form">
             <form>
-              <input type="text" placeholder="enter name" />
-              <input type="text" placeholder="enter phone number" />
-              <input type="text" placeholder="enter comment" />
+              <input type="text" placeholder="Enter Your Name" />
+              <input type="text" placeholder="Enter Your Number" />
+              <input type="text" placeholder="Enter Comment" />
 
               <input className="submit" type="submit" />
             </form>

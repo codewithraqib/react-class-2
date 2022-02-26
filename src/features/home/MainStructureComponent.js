@@ -62,6 +62,8 @@ class MainStructureComponent extends React.PureComponent {
             })}
           </div>
         ) : null}
+
+        
       </div>
     );
   }
