@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../common/Header';
+import Footer from '../common/FooterSection';
 
 // const links = [
 //   { name: 'Home', active: true },
@@ -50,7 +51,7 @@ class App extends React.PureComponent {
         <div className="page-container">{this.props.children}</div>
 
         {/* <div>I am footer</div> */}
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     );
   }

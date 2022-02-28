@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactSection, Reviews } from '../common';
+import { ContactSection, Reviews} from '../common';
 import HeroSection from '../common/HeroSection';
 import MainStructureComponent from './MainStructureComponent';
 
@@ -136,8 +136,7 @@ class WelcomePage extends React.PureComponent {
           />
 
           <MainStructureComponent
-            title="Our Projects | Products
-"
+            title="Our Projects | Products"
             description={
               'We have developed a lot of products for ourselves and more for clients in which some prominent ones are -'
             }
@@ -146,12 +145,14 @@ class WelcomePage extends React.PureComponent {
           />
 
           <Reviews reviews={this.state.reviews} />
+         
+          
         </div>
-
-        <ContactSection />
+        <ContactSection/>
 
         {/* <div onClick={() => this.props.history.push('/projects')}>Click me</div> */}
       </div>
+
     );
   }
 }
