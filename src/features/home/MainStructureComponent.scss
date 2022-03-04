@@ -24,9 +24,10 @@
   }
 
   .service-cards-container {
-    display: grid;
+    display: flex;
+    flex-direction: row;
     // grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
 
@@ -36,4 +37,61 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
+}
+
+
+@media only screen and (max-width: 600px){
+
+
+.main-content-parent{
+
+  .about-us-container {
+
+    align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  .image-container{
+
+    display: flex;
+     justify-content: center;
+
+      img {
+        width: 60vw;
+        border-radius: 8px;
+      }
+
+  }
+  .desc-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  }
+  .service-cards-container {
+    display: flex;
+    flex-direction: column;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    // grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .project-cards-container{
+
+    display: flex;
+    flex-direction: column;
+  }
+
+ 
+
+}
+
+
+
+
+
+
 }

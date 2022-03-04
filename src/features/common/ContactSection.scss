@@ -55,3 +55,20 @@
     }
 
 }
+
+
+@media only screen and (max-width: 600px){
+
+
+    .contact-section{
+
+        .form{
+
+        display: flex;
+        flex-direction: column ;
+        gap: 30px;
+    }
+}
+
+
+}

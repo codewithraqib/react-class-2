@@ -20,7 +20,7 @@ class MainStructureComponent extends React.PureComponent {
           ) : null}
 
           <div className="desc-container">
-            <div>
+            <div className='ml20'>
               {props.title ? (
                 <div className="title-underline">
                   <div>

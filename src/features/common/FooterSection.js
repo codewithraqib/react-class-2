@@ -20,7 +20,7 @@ class FooterSection extends React.PureComponent{
           <FaInstagram size={45} color="grey" />
         </div>
 
-        <div className="mt20 items-center">
+        <div className="desc mt20 items-center ">
           <span>
             Copyright ©2022 All rights reserved | This website is made with <FaHeart color='red'/> by{' '}
             <span className="red-text">Bracecodes Software Solutions Pvt. Ltd.</span>
