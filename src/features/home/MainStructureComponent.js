@@ -48,7 +48,7 @@ class MainStructureComponent extends React.PureComponent {
         ) : null}
 
         {props.members ? (
-          <div className="service-cards-container">
+          <div className="team-cards-container">
             {props.members.map(member => {
               return <MemberCard service={member} />;
             })}

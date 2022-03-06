@@ -1,5 +1,6 @@
 .reviews-container {
   display: flex;
+  
 
   .review-card {
     // min-width: 80vw;
@@ -10,4 +11,13 @@
       }
     }
   }
+}
+
+@media only screen and (max-width: 600px){
+
+  .reviews-container {
+    display: flex;
+    justify-content: center;
+  }
+
 }
