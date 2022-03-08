@@ -7,7 +7,10 @@ class MainStructureComponent extends React.PureComponent {
 
     this.state = {};
   }
-  componentDidMount() {}
+  componentDidMount() {
+    console.log('Props are----', this.props);
+  }
+
   render() {
     let props = this.props;
     return (
@@ -20,7 +23,7 @@ class MainStructureComponent extends React.PureComponent {
           ) : null}
 
           <div className="desc-container">
-            <div className='ml20'>
+            <div className="ml20">
               {props.title ? (
                 <div className="title-underline">
                   <div>
@@ -63,7 +66,11 @@ class MainStructureComponent extends React.PureComponent {
           </div>
         ) : null}
 
-        
+        {props.viewMore ? (
+          <div onClick={() => this.props.goToPage()} className="view-mopre bold-text">
+            {props.viewMore}
+          </div>
+        ) : null}
       </div>
     );
   }

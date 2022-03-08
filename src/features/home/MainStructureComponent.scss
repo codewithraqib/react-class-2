@@ -23,12 +23,10 @@
     }
   }
 
-  .team-cards-container{
+  .team-cards-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-
-
   }
 
   .service-cards-container {
@@ -40,7 +38,6 @@
   }
 
   .project-cards-container {
-
     display: grid;
     // grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(2, 1fr);
@@ -48,65 +45,53 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .main-content-parent {
+    .about-us-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
 
-@media only screen and (max-width: 600px){
+      .image-container {
+        display: flex;
+        justify-content: center;
 
-
-.main-content-parent{
-
-  .about-us-container {
-
-    align-items: center;
-  display: flex;
-  flex-direction: column;
-
-  .image-container{
-
-    display: flex;
-     justify-content: center;
-
-      img {
-        width: 60vw;
-        border-radius: 8px;
+        img {
+          width: 60vw;
+          border-radius: 8px;
+        }
       }
+      .desc-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+    .service-cards-container {
+      display: flex;
+      flex-direction: column;
+      // grid-template-columns: 1fr 1fr 1fr 1fr;
+      // grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
 
+    .team-cards-container {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .project-cards-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .view-mopre {
+      display: flex;
+      justify-content: flex-end;
+      color: blue;
+      margin-top: 10px;
+      font-size: 14px !important;
+    }
   }
-  .desc-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-  }
-
-  }
-  .service-cards-container {
-    display: flex;
-    flex-direction: column;
-    // grid-template-columns: 1fr 1fr 1fr 1fr;
-    // grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-  }
-
-  .team-cards-container{
-    display: grid;
-    grid-template-columns: 1fr;
-
-  }
-
-  .project-cards-container{
-
-    display: flex;
-    flex-direction: column;
-  }
-
- 
-
-}
-
-
-
-
-
-
 }

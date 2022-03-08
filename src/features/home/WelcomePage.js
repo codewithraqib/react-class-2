@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactSection, Reviews} from '../common';
+import { ContactSection, Reviews } from '../common';
 import HeroSection from '../common/HeroSection';
 import MainStructureComponent from './MainStructureComponent';
 
@@ -105,6 +105,12 @@ class WelcomePage extends React.PureComponent {
   componentDidMount() {
     console.log('Props in welcome page are----', this.props);
   }
+
+  goToPage = () => {
+    console.log('Porps are-----------------');
+
+    this.props.history.push('/projects');
+  };
   render() {
     return (
       <div className="home-welcome-page">
@@ -142,17 +148,16 @@ class WelcomePage extends React.PureComponent {
             }
             // image={'images/hero-back.jpg'}
             projects={this.state.projects}
+            viewMore={'View All Projects'}
+            goToPage={this.goToPage}
           />
 
           <Reviews reviews={this.state.reviews} />
-         
-          
         </div>
-        <ContactSection/>
+        <ContactSection />
 
         {/* <div onClick={() => this.props.history.push('/projects')}>Click me</div> */}
       </div>
-
     );
   }
 }

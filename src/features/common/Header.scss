@@ -34,31 +34,31 @@
   }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
+  .header-container {
+    grid-template-columns: 1fr;
 
-  .header-container{
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
 
-    // flex-direction: column;
+    .links-container {
+      display: flex;
+      justify-content: center;
 
-    .links-container-inner{
-
-  display: flex;
-      .link-item{
+      .links-container-inner {
         display: flex;
-        width: 80px;
-        justify-content: center;
+        .link-item {
+          display: flex;
+          width: 80px;
+          justify-content: center;
+          margin: 0px 5px !important;
+        }
 
-
+        // justify-content: center;
       }
-
-  // justify-content: center;
-  
+    }
   }
-
-}
-
-
-
-
-
 }

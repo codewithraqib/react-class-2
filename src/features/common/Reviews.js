@@ -43,7 +43,7 @@ class Reviews extends React.PureComponent {
           infiniteLoop={true}
           autoPlay={true}
           interval={3000}
-          onChange={() => console.log('Slide changed')}
+          // onChange={() => console.log('Slide changed')}
           thumbWidth={200}
           width={'100%'}
         >
