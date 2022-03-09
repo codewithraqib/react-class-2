@@ -67,7 +67,7 @@ class MainStructureComponent extends React.PureComponent {
         ) : null}
 
         {props.viewMore ? (
-          <div onClick={() => this.props.goToPage()} className="view-mopre bold-text">
+          <div onClick={() => this.props.goToPage()} className="view-more bold-text">
             {props.viewMore}
           </div>
         ) : null}

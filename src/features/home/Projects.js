@@ -38,6 +38,7 @@ class Projects extends React.PureComponent {
         {
           name: 'Cheezymezy',
           desc: 'Restaurant Aggerigator System',
+          additionalData: 'kjhgfdcghjkhgfghjkjhgf kjhgfdghjkjhgfghjkjhgf',
         },
         {
           name: 'Cheezymezy',

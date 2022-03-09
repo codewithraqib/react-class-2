@@ -29,8 +29,11 @@ class ProjectCard extends React.PureComponent {
   };
 
   cardClicked = () => {
-    console.log('Cartd clicked');
-
+    // if (this.state.showExtendedCard === true) {
+    //   this.setState({ showExtendedCard: false });
+    // } else {
+    //   this.setState({ showExtendedCard: true });
+    // }
     this.setState({ showExtendedCard: !this.state.showExtendedCard });
   };
 
@@ -55,7 +58,12 @@ class ProjectCard extends React.PureComponent {
 
         {this.state.showExtendedCard && (
           <div className="extended-card">
-            <span> I am extra part of the card</span>
+            <span>
+              {' '}
+              {this.props.project && this.props.project.additionalData
+                ? this.props.project.additionalData
+                : 'no data'}
+            </span>
           </div>
         )}
       </div>

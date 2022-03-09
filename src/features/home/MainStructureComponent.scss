@@ -43,6 +43,14 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
+
+  .view-more {
+    display: flex;
+    justify-content: flex-end;
+    color: blue;
+    margin-top: 10px;
+    font-size: 14px !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -84,14 +92,6 @@
     .project-cards-container {
       display: flex;
       flex-direction: column;
-    }
-
-    .view-mopre {
-      display: flex;
-      justify-content: flex-end;
-      color: blue;
-      margin-top: 10px;
-      font-size: 14px !important;
     }
   }
 }
