@@ -50,6 +50,10 @@
     color: blue;
     margin-top: 10px;
     font-size: 14px !important;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 

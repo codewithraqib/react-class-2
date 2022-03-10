@@ -28,18 +28,23 @@ class ProjectCard extends React.PureComponent {
     }
   };
 
-  cardClicked = () => {
+  cardClicked = card => {
     // if (this.state.showExtendedCard === true) {
     //   this.setState({ showExtendedCard: false });
     // } else {
     //   this.setState({ showExtendedCard: true });
     // }
-    this.setState({ showExtendedCard: !this.state.showExtendedCard });
+    // this.setState({ showExtendedCard: !this.state.showExtendedCard });
+
+    this.props.cardClicked(card);
   };
 
   render() {
     return (
-      <div onClick={this.props.clickable && this.cardClicked} className="card project-card">
+      <div
+        onClick={this.props.clickable ? () => this.props.cardClicked(this.props.project) : null}
+        className="card project-card"
+      >
         <div className="project-card-inner">
           <div className="name-description">
             <div className="sub-title">
@@ -56,12 +61,12 @@ class ProjectCard extends React.PureComponent {
           </div>
         </div>
 
-        {this.state.showExtendedCard && (
+        {this.props.project.active && (
           <div className="extended-card">
             <span>
               {' '}
-              {this.props.project && this.props.project.additionalData
-                ? this.props.project.additionalData
+              {this.props.project && this.props.project.details
+                ? this.props.project.details
                 : 'no data'}
             </span>
           </div>
