@@ -47,11 +47,12 @@ class App extends React.PureComponent {
           logo={'/images/logo.jpeg'}
           links={this.state.links}
           onLinkClick={this.onNavItemClick}
+          onLogoClick={() => this.props.history.push('/')}
         />
         <div className="page-container">{this.props.children}</div>
 
         {/* <div>I am footer</div> */}
-        <Footer/>
+        <Footer />
       </div>
     );
   }

@@ -108,6 +108,17 @@
         padding: 12px 10px;
         border-radius: 50px;
         border: 1px solid rgb(144, 172, 209);
+
+        a {
+          text-decoration: none;
+          &:hover {
+            cursor: pointer;
+            color: red;
+          }
+          span {
+            color: initial;
+          }
+        }
       }
     }
   }

@@ -20,7 +20,7 @@ class Header extends React.PureComponent {
     // );
     return (
       <div className="header-container">
-        <div className="logo-container">
+        <div className="logo-container" onClick={this.props.onLogoClick}>
           <img className="logo-size" alt="logo" src={this.props.logo} />
         </div>
         <div className="links-container">

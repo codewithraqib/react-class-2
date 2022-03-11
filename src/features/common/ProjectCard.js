@@ -41,12 +41,12 @@ class ProjectCard extends React.PureComponent {
 
   render() {
     return (
-      <div
-        onClick={this.props.clickable ? () => this.props.cardClicked(this.props.project) : null}
-        className="card project-card"
-      >
+      <div className="card project-card">
         <div className="project-card-inner">
-          <div className="name-description">
+          <div
+            onClick={this.props.clickable ? () => this.props.cardClicked(this.props.project) : null}
+            className="name-description"
+          >
             <div className="sub-title">
               <span className="bold-text">{this.props.project.name}</span>
             </div>
@@ -56,7 +56,9 @@ class ProjectCard extends React.PureComponent {
           </div>
           <div className="brand">
             <div className="inner">
-              <span>{this.props.project.name}</span>
+              <a href={this.props.project.link} target="_blank">
+                <span>{this.props.project.name}</span>
+              </a>
             </div>
           </div>
         </div>
