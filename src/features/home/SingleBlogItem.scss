@@ -1,0 +1,37 @@
+.single-blog-container {
+  height: 100vh - 8vh;
+  display: flex;
+  .left-section {
+    overflow-y: hidden;
+    max-width: 20%;
+    min-width: 20%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-right: 1px solid #444;
+    padding-right: 20px;
+
+    .inner {
+      display: flex;
+      flex-direction: column;
+    }
+    img {
+      height: 60px;
+    }
+  }
+
+  .mid-section {
+    overflow-y: scroll;
+    max-width: 50%;
+    min-width: 50%;
+  }
+
+  .right-section {
+    overflow-y: hidden;
+    max-width: 30%;
+    min-width: 30%;
+    border-left: 1px solid #444;
+  }
+}
