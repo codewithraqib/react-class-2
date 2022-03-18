@@ -1,7 +1,8 @@
 import initialState from './initialState';
+import { reducer as storeBlogs } from './storeBlogs';
+import { reducer as setBlogInFocus } from './setBlogInFocus';
 
-const reducers = [
-];
+const reducers = [storeBlogs, setBlogInFocus];
 
 export default function reducer(state = initialState, action) {
   let newState;

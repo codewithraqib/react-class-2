@@ -1,6 +1,10 @@
 import React from 'react';
 import Header from '../common/Header';
 import Footer from '../common/FooterSection';
+import * as actions from './redux/actions';
+import { bindActionCreators } from 'redux';
+import * as commonActoins from '../common/redux/actions';
+import { connect } from 'react-redux';
 
 // const links = [
 //   { name: 'Home', active: true },
@@ -58,4 +62,20 @@ class App extends React.PureComponent {
   }
 }
 
-export default App;
+/* istanbul ignore next */
+function mapStateToProps(state) {
+  return {
+    home: state.home,
+  };
+}
+
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...actions, ...commonActoins }, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+// export default App;

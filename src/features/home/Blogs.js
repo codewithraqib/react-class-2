@@ -20,19 +20,53 @@ class Blogs extends React.PureComponent {
       callback: res => {
         console.log('data from fake api is-----', res);
 
-        if (res && res.data) {
-          this.setState({ blogs: res.data });
+        if (res && res.data && res.data.length > 0) {
+          // this.setState({ blogs: res.data });
+
+          this.props.actions.storeBlogs(res.data);
+        } else {
+          this.setState({ error: 'Some issue in geetting data' });
         }
       },
     });
+
+    setTimeout(() => {
+      console.log('testing All props in blogs page are------', this.props);
+    }, 2000);
   }
 
-  render() {
+  goToBlog = blog => {
+    this.props.actions.setBlogInFocus(blog);
+
+    this.props.history.push('/blog');
+
+    setTimeout(() => {
+      console.log('Testing props after setting blog in focus----', this.props);
+    }, 2000);
+  };
+
+  renderBlogItem = blog => {
     return (
-      <div>
-        {this.state.blogs &&
-          this.state.blogs.map(blog => {
-            return <div>{blog.title}</div>;
+      <div className="blog-item" onClick={() => this.goToBlog(blog)}>
+        <div>
+          <img src="images/insta.png" alt="" />
+        </div>
+
+        <div>
+          <div className="sub-title">{blog.title} </div>
+          <div className="general-text">{blog.body} </div>
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    // console.log('All props in blogs page are------', this.props);
+    return (
+      <div className="blogs-container content-wrapper">
+        {this.props.home.blogs &&
+          this.props.home.blogs.map(blog => {
+            return this.renderBlogItem(blog);
           })}
       </div>
     );

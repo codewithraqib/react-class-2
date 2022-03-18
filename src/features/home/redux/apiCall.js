@@ -66,9 +66,9 @@ export function apiCall(args = {}) {
             type: HOME_API_CALL_FAILURE,
             data: { error: err },
           });
-          if (err.response && err.response.status === 401) {
-            window.location.href = '/';
-          }
+          // if (err.response && err.response.status === 401) {
+          //   window.location.href = '/';
+          // }
           reject(err.response);
         },
       );
@@ -84,40 +84,44 @@ export function dismissApiCallError() {
   };
 }
 
-export function reducer(state, action) {
-  switch (action.type) {
-    case HOME_API_CALL_BEGIN:
-      // Just after a request is sent
-      return {
-        ...state,
-        apiCallPending: true,
-        apiCallError: null,
-      };
+// export function reducer(state, action) {
+//   switch (action.type) {
+//     case HOME_API_CALL_BEGIN:
+//       // Just after a request is sent
+//       console.log('We are in api begin event');
+//       return {
+//         ...state,
+//         apiCallPending: true,
+//         apiCallError: null,
+//       };
 
-    case HOME_API_CALL_SUCCESS:
-      // The request is success
-      return {
-        ...state,
-        apiCallPending: false,
-        apiCallError: null,
-      };
+//     case HOME_API_CALL_SUCCESS:
+//       // The request is success
 
-    case HOME_API_CALL_FAILURE:
-      // The request is failed
-      return {
-        ...state,
-        apiCallPending: false,
-        apiCallError: action.data.error,
-      };
+//       console.log('We are in api success event');
+//       return {
+//         ...state,
+//         apiCallPending: false,
+//         apiCallError: null,
+//         // myBlogs: action.data,
+//       };
 
-    case HOME_API_CALL_DISMISS_ERROR:
-      // Dismiss the request failure error
-      return {
-        ...state,
-        apiCallError: null,
-      };
+//     case HOME_API_CALL_FAILURE:
+//       // The request is failed
+//       return {
+//         ...state,
+//         apiCallPending: false,
+//         apiCallError: action.data.error,
+//       };
 
-    default:
-      return state;
-  }
-}
+//     case HOME_API_CALL_DISMISS_ERROR:
+//       // Dismiss the request failure error
+//       return {
+//         ...state,
+//         apiCallError: null,
+//       };
+
+//     default:
+//       return state;
+//   }
+// }

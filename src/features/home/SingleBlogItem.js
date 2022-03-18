@@ -1,4 +1,8 @@
 import React from 'react';
+import * as actions from './redux/actions';
+import { bindActionCreators } from 'redux';
+import * as commonActoins from '../common/redux/actions';
+import { connect } from 'react-redux';
 
 class SingleBlogItem extends React.PureComponent {
   constructor(props) {
@@ -25,6 +29,8 @@ class SingleBlogItem extends React.PureComponent {
         },
       ],
     };
+
+    console.log('testing all props in single blog item----', this.props);
   }
 
   renderSingleBlog = blog => {
@@ -77,7 +83,7 @@ class SingleBlogItem extends React.PureComponent {
             </div>
 
             <div className="title">
-              <span>Best Tricks to Make Your React Native App Faster</span>
+              <span>{this.props.home.blogInFocus.title}</span>
             </div>
 
             <div className="sub-title">
@@ -92,26 +98,7 @@ class SingleBlogItem extends React.PureComponent {
             </div>
 
             <div className="blog-desc">
-              <span className="general-text">
-                Finally made a decision to build a mobile app and started hunting for the
-                technologies that best fit your business goals? With the prediction that the mobile
-                app development industry will generate a revenue of USD 532 billion by 2023, it’s
-                high time to start leveraging the mobile market. However, with dozens of apps
-                available on the app stores, business owners or entrepreneurs quickly get confused
-                about how to get an edge to your business. Well, when you are looking to build your
-                startup, you are already juggling with the questions like how to plan your app that
-                delivers an excellent user experience and runs on multiple platforms without losing
-                the quality. And with Android and iOS platforms occupying 98% of the market share,
-                then surely your target is to reach the majority of mobile users and prefer
-                launching an app that ensures a seamless experience on both platforms. If yes, then
-                React Native is one of those cross-platform app development frameworks for mobile
-                app development that perfectly suits your modern-day business needs. In fact, React
-                Native is a perfect combination for businesses looking to create Native UI using the
-                tool of their own choice and thrive to deliver an excellent user experience. If you
-                are new to React Native and wondering why you should consider React Native Mobile
-                App Development and How to boost the performance of React Native apps, then read
-                below…
-              </span>
+              <span className="general-text">{this.props.home.blogInFocus.body}</span>
             </div>
 
             <div className="more-at">
@@ -155,4 +142,20 @@ class SingleBlogItem extends React.PureComponent {
   }
 }
 
-export default SingleBlogItem;
+// export default SingleBlogItem;
+
+/* istanbul ignore next */
+function mapStateToProps(state) {
+  return {
+    home: state.home,
+  };
+}
+
+/* istanbul ignore next */
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({ ...actions, ...commonActoins }, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SingleBlogItem);
