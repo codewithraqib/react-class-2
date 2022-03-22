@@ -24,6 +24,8 @@ class Blogs extends React.PureComponent {
           // this.setState({ blogs: res.data });
 
           this.props.actions.storeBlogs(res.data);
+
+          localStorage.setItem('allBlogs', JSON.stringify(res.data));
         } else {
           this.setState({ error: 'Some issue in geetting data' });
         }

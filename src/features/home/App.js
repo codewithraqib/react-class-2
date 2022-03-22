@@ -26,6 +26,21 @@ class App extends React.PureComponent {
       abc: true,
       cde: 1,
     };
+
+    this.retreiveData();
+  }
+
+  retreiveData = () => {
+    let allBlogs = JSON.parse(localStorage.getItem('allBlogs'));
+    console.log('data from localstorage is----', allBlogs);
+
+    this.props.actions.storeBlogs(allBlogs);
+  };
+
+  componentDidMount() {
+    console.log('Props in App.js are-----', this.props.home);
+
+    localStorage.setItem('props', JSON.stringify(this.props.home));
   }
 
   onNavItemClick = navItem => {
