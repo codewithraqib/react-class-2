@@ -40,6 +40,8 @@ class Blogs extends React.PureComponent {
   goToBlog = blog => {
     this.props.actions.setBlogInFocus(blog);
 
+    localStorage.setItem('blogInFocus', JSON.stringify(blog));
+
     this.props.history.push('/blog');
 
     setTimeout(() => {

@@ -29,7 +29,7 @@ class Header extends React.PureComponent {
               return (
                 <span
                   style={link.active ? { backgroundColor: 'black' } : {}}
-                  onClick={() => this.props.onLinkClick(link.name)}
+                  onClick={() => this.props.onLinkClick(link)}
                   className="link-item"
                 >
                   {link.name}

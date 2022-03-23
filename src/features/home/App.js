@@ -18,23 +18,31 @@ class App extends React.PureComponent {
 
     this.state = {
       links: [
-        { name: 'Home', active: true },
-        { name: 'About us', active: false },
-        { name: 'Contact us', active: false },
+        { name: 'Home', active: true, link: '/' },
+        { name: 'About us', active: false, link: '/about-us' },
+        { name: 'Contact us', active: false, link: '/contact-us' },
+        { name: 'Blogs', active: false, link: '/blogs' },
       ],
 
       abc: true,
       cde: 1,
     };
 
-    this.retreiveData();
+    this.retreiveDataFromLocalStorage();
   }
 
-  retreiveData = () => {
-    let allBlogs = JSON.parse(localStorage.getItem('allBlogs'));
-    console.log('data from localstorage is----', allBlogs);
+  retreiveDataFromLocalStorage = () => {
+    let allBlogs = localStorage.getItem('allBlogs');
 
-    this.props.actions.storeBlogs(allBlogs);
+    if (allBlogs) {
+      this.props.actions.storeBlogs(JSON.parse(allBlogs));
+    }
+
+    let blogInFocus = localStorage.getItem('blogInFocus');
+
+    if (blogInFocus) {
+      this.props.actions.setBlogInFocus(JSON.parse(blogInFocus));
+    }
   };
 
   componentDidMount() {
@@ -49,7 +57,7 @@ class App extends React.PureComponent {
     let newLinks = [];
 
     this.state.links.map(val => {
-      if (val.name === navItem) {
+      if (val.name === navItem.name) {
         newLinks.push({ name: val.name, active: true });
       } else {
         newLinks.push({ name: val.name, active: false });
@@ -57,6 +65,8 @@ class App extends React.PureComponent {
     });
 
     this.setState({ links: newLinks });
+
+    this.props.history.push(navItem.link);
   };
 
   render() {
