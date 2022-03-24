@@ -3,6 +3,7 @@ import * as actions from './redux/actions';
 import { bindActionCreators } from 'redux';
 import * as commonActoins from '../common/redux/actions';
 import { connect } from 'react-redux';
+import Loader from '../common/Loader';
 
 class Blogs extends React.PureComponent {
   constructor(props) {
@@ -23,9 +24,11 @@ class Blogs extends React.PureComponent {
         if (res && res.data && res.data.length > 0) {
           // this.setState({ blogs: res.data });
 
-          this.props.actions.storeBlogs(res.data);
+          setTimeout(() => {
+            this.props.actions.storeBlogs(res.data);
 
-          localStorage.setItem('allBlogs', JSON.stringify(res.data));
+            localStorage.setItem('allBlogs', JSON.stringify(res.data));
+          }, 2000);
         } else {
           this.setState({ error: 'Some issue in geetting data' });
         }
@@ -68,10 +71,13 @@ class Blogs extends React.PureComponent {
     // console.log('All props in blogs page are------', this.props);
     return (
       <div className="blogs-container content-wrapper">
-        {this.props.home.blogs &&
+        {this.props.home.blogs ? (
           this.props.home.blogs.map(blog => {
             return this.renderBlogItem(blog);
-          })}
+          })
+        ) : (
+          <Loader />
+        )}
       </div>
     );
   }

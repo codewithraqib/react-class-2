@@ -23,19 +23,18 @@ class App extends React.PureComponent {
         { name: 'Contact us', active: false, link: '/contact-us' },
         { name: 'Blogs', active: false, link: '/blogs' },
       ],
-
-      abc: true,
-      cde: 1,
     };
 
-    this.retreiveDataFromLocalStorage();
+    // this.retreiveDataFromLocalStorage();
   }
 
   retreiveDataFromLocalStorage = () => {
     let allBlogs = localStorage.getItem('allBlogs');
 
     if (allBlogs) {
-      this.props.actions.storeBlogs(JSON.parse(allBlogs));
+      setTimeout(() => {
+        this.props.actions.storeBlogs(JSON.parse(allBlogs));
+      }, 2000);
     }
 
     let blogInFocus = localStorage.getItem('blogInFocus');
@@ -43,12 +42,21 @@ class App extends React.PureComponent {
     if (blogInFocus) {
       this.props.actions.setBlogInFocus(JSON.parse(blogInFocus));
     }
+
+    let menu = localStorage.getItem('menu');
+
+    if (menu) {
+      // setTimeout(() => {
+      this.setState({ links: JSON.parse(menu) });
+      // }, 1000);
+    }
   };
 
   componentDidMount() {
     console.log('Props in App.js are-----', this.props.home);
 
     localStorage.setItem('props', JSON.stringify(this.props.home));
+    this.retreiveDataFromLocalStorage();
   }
 
   onNavItemClick = navItem => {
@@ -58,15 +66,23 @@ class App extends React.PureComponent {
 
     this.state.links.map(val => {
       if (val.name === navItem.name) {
-        newLinks.push({ name: val.name, active: true });
+        newLinks.push({ ...val, active: true });
       } else {
-        newLinks.push({ name: val.name, active: false });
+        newLinks.push({ ...val, active: false });
       }
     });
 
     this.setState({ links: newLinks });
 
+    localStorage.setItem('menu', JSON.stringify(newLinks));
+
     this.props.history.push(navItem.link);
+  };
+
+  onLogoClick = () => {
+    this.props.history.push('/');
+
+    this.onNavItemClick(this.state.links[0]);
   };
 
   render() {
@@ -76,7 +92,7 @@ class App extends React.PureComponent {
           logo={'/images/logo.jpeg'}
           links={this.state.links}
           onLinkClick={this.onNavItemClick}
-          onLogoClick={() => this.props.history.push('/')}
+          onLogoClick={() => this.onLogoClick()}
         />
         <div className="page-container">{this.props.children}</div>
 
