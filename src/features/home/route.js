@@ -1,6 +1,5 @@
-import { SingleBlogItem, WelcomePage } from './';
+import { Gallery, SingleBlogItem, WelcomePage } from './';
 import Blogs from './Blogs';
-import MainStructureComponent from './MainStructureComponent';
 import Projects from './Projects';
 
 export default {
@@ -10,5 +9,6 @@ export default {
     { path: 'projects', component: Projects, isIndex: false },
     { path: 'blogs', component: Blogs, isIndex: false },
     { path: 'blog', component: SingleBlogItem, isIndex: false },
+    { path: 'gallery', component: Gallery, isIndex: false },
   ],
 };

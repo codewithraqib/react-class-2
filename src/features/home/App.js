@@ -25,7 +25,7 @@ class App extends React.PureComponent {
       ],
     };
 
-    // this.retreiveDataFromLocalStorage();
+    this.retreiveDataFromLocalStorage();
   }
 
   retreiveDataFromLocalStorage = () => {
