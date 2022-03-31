@@ -22,6 +22,7 @@ class App extends React.PureComponent {
         { name: 'About us', active: false, link: '/about-us' },
         { name: 'Contact us', active: false, link: '/contact-us' },
         { name: 'Blogs', active: false, link: '/blogs' },
+        { name: 'Gallery', active: false, link: '/gallery' },
       ],
     };
 

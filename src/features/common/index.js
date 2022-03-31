@@ -8,3 +8,4 @@ export { default as Reviews } from './Reviews';
 export { default as ContactSection } from './ContactSection';
 export { default as FooterSection } from './FooterSection';
 export { default as Loader } from './Loader';
+export { default as MyModal } from './MyModal';
