@@ -1,4 +1,4 @@
-import { Gallery, SingleBlogItem, WelcomePage } from './';
+import { Contact, Gallery, SingleBlogItem, WelcomePage } from './';
 import Blogs from './Blogs';
 import Projects from './Projects';
 
@@ -10,5 +10,6 @@ export default {
     { path: 'blogs', component: Blogs, isIndex: false },
     { path: 'blog', component: SingleBlogItem, isIndex: false },
     { path: 'gallery', component: Gallery, isIndex: false },
+    { path: 'contact-us', component: Contact, isIndex: false },
   ],
 };

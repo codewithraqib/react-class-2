@@ -4,3 +4,4 @@ export { default as MainStructureComponent } from './MainStructureComponent';
 export { default as Projects } from './Projects';
 export { default as SingleBlogItem } from './SingleBlogItem';
 export { default as Gallery } from './Gallery';
+export { default as Contact } from './Contact';

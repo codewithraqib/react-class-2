@@ -21,12 +21,12 @@ class Gallery extends React.PureComponent {
           // this.setState({ blogs: res.data });
 
           //   setTimeout(() => {
-          this.props.actions.setGallery(res.data.splice(1, 10));
+          this.props.actions.setGallery(res.data.splice(1, 50));
 
           //   localStorage.setItem('gallery', JSON.stringify(res.data));
           //   }, 2000);
         } else {
-          this.setState({ error: 'Some issue in geetting data' });
+          this.setState({ error: 'Some issue in getting data' });
         }
       },
     });
