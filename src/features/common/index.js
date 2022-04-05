@@ -10,3 +10,4 @@ export { default as FooterSection } from './FooterSection';
 export { default as Loader } from './Loader';
 export { default as MyModal } from './MyModal';
 export { default as MyInput } from './MyInput';
+export { default as Button } from './Button';

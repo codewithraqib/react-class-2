@@ -19,7 +19,13 @@ class MyInput extends React.PureComponent {
             placeholder={props.placeholder}
             // onChange={e => this.onChange(e)}
             onChange={e => props.onChange(e.target.value)}
+            value={props.value}
+            onBlur={e => props.onBlur(e.target.value)}
           />
+        </div>
+
+        <div className="error">
+          <span>{props.error}</span>
         </div>
       </div>
     );
