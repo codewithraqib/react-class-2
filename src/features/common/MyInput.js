@@ -21,6 +21,7 @@ class MyInput extends React.PureComponent {
             onChange={e => props.onChange(e.target.value)}
             value={props.value}
             onBlur={e => props.onBlur(e.target.value)}
+            onFocus={() => console.log('Input focused')}
           />
         </div>
 

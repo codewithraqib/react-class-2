@@ -15,29 +15,33 @@ class Contact extends React.PureComponent {
     };
   }
 
-  // onChange = (type, value) => {
-  //   console.log('testing type is----', type);
-  //   console.log('testing value is----', value);
+  onChange = (type, value) => {
+    console.log('testing type is----', type);
+    console.log('testing value is----', value);
 
-  //   switch (type) {
-  //     case 'name':
-  //       this.setState({ name: value });
-  //       break;
-  //     case 'class':
-  //       this.setState({ class: value });
-  //       break;
-  //     case 'marks':
-  //       this.setState({ marks: value });
-  //       break;
+    switch (type) {
+      case 'name':
+        this.setState({ name: value, nameError: null });
+        break;
+      case 'class':
+        this.setState({ class: value, classError: null });
+        break;
+      case 'marks':
+        this.setState({ marks: value, marksError: null });
+        break;
 
-  //     default:
-  //       break;
-  //   }
-  // };
+      case 'profession':
+        this.setState({ profession: value, professionError: null });
+        break;
+
+      default:
+        break;
+    }
+  };
 
   // onChange = (type, val) => {
-  //   this.setState({type:val})
-  // }
+  //   this.setState({ type: val });
+  // };
 
   onNameChange = val => {
     this.setState({ name: val, nameError: null });
@@ -53,13 +57,17 @@ class Contact extends React.PureComponent {
     this.setState({ marks: val, marksError: null });
   };
 
+  onProfessionChange = val => {
+    this.setState({ profession: val, professionError: null });
+  };
+
   onBlur = (type, val) => {
     console.log('type and value is-----', type, val);
 
     switch (type) {
       case 'name':
         if (val === '') {
-          this.setState({ nameError: 'Please enter your name!' });
+          this.setState({ nameError: 'Please enter your name on blur!' });
         }
         break;
 
@@ -75,6 +83,12 @@ class Contact extends React.PureComponent {
         }
         break;
 
+      case 'profession':
+        if (val === '') {
+          this.setState({ professionError: 'Enter your profession' });
+        }
+        break;
+
       default:
         break;
     }
@@ -83,27 +97,52 @@ class Contact extends React.PureComponent {
   onSubmit = () => {
     let erroCount = 0;
 
-    if (!this.state.name) {
+    if (!this.state.name || this.state.name === '') {
       this.setState({ nameError: 'Please enter name!' });
-
       erroCount++;
-      // return;
     }
-    if (!this.state.class) {
-      this.setState({ classError: 'Please enter class!' });
-      // return;
+    if (!this.state.class || this.state.class === '') {
+      this.setState({ classError: 'Please enter your class!' });
       erroCount++;
     }
     if (!this.state.marks) {
-      this.setState({ marksError: 'Please enter marks!' });
-      // return;
+      this.setState({ marksError: 'Please enter your marks!' });
       erroCount++;
     }
 
-    if (erroCount > 0) {
+    if (!this.state.profession || this.state.profession === '') {
+      this.setState({ professionError: 'Please enter your profession!' });
+      erroCount++;
+    }
+
+    console.log('Error count is----', erroCount);
+    if (erroCount !== 0) {
       return;
     }
-    alert('button  clicked');
+
+    let myData = {
+      name: this.state.name,
+      class: this.state.class,
+      marks: this.state.marks,
+      profession: this.state.profession,
+    };
+
+    this.props.actions.apiCall({
+      url: 'https://mywebsite.com/api/forms',
+      method: 'POST',
+      data: myData,
+      callback: res => {
+        console.log('testing data from fake gallery api is-----', res);
+
+        if (res && res.message === 'Form Submitted') {
+          alert('Form Submitted');
+        } else {
+          alert('Form Not submitted');
+        }
+      },
+    });
+
+    // alert('Form Submitted!');
   };
 
   render() {
@@ -116,19 +155,19 @@ class Contact extends React.PureComponent {
             placeholder="enter your name"
             width={'100%'}
             label={'Name'}
-            onChange={val => this.onNameChange(val)}
+            // onChange={val => this.onNameChange(val)}
+            onChange={val => this.onChange('name', val)}
             value={this.state.name}
             onBlur={val => this.onBlur('name', val)}
             error={this.state.nameError}
-            // onChange={val => this.onChnage("name", val)}
           />
           <MyInput
             type="text"
             placeholder="enter your class"
             width={'100%'}
             label={'Class'}
-            onChange={val => this.onClassChange(val)}
-            // onChange={val => this.onChange("class",val)}
+            // onChange={val => this.onClassChange(val)}
+            onChange={val => this.onChange('class', val)}
             value={this.state.class}
             onBlur={val => this.onBlur('class', val)}
             error={this.state.classError}
@@ -139,11 +178,23 @@ class Contact extends React.PureComponent {
             placeholder="enter your marks"
             width={'100%'}
             label={'Number'}
-            onChange={val => this.onMarksChange(val)}
-            // onChange={val => this.onChange("class",val)}
+            // onChange={val => this.onMarksChange(val)}
+            onChange={val => this.onChange('marks', val)}
             value={this.state.marks}
             onBlur={val => this.onBlur('marks', val)}
             error={this.state.marksError}
+          />
+
+          <MyInput
+            type="text"
+            placeholder="enter your profession"
+            width={'100%'}
+            label={'Profession'}
+            // onChange={val => this.onProfessionChange(val)}
+            onChange={val => this.onChange('profession', val)}
+            value={this.state.profession}
+            onBlur={val => this.onBlur('profession', val)}
+            error={this.state.professionError}
           />
 
           <Button name={'Add'} onClick={this.onSubmit} />
