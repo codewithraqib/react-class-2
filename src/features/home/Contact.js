@@ -121,23 +121,52 @@ class Contact extends React.PureComponent {
     }
 
     let myData = {
-      name: this.state.name,
-      class: this.state.class,
-      marks: this.state.marks,
-      profession: this.state.profession,
+      // id: 1,
+      title: this.state.name,
+      body: this.state.class,
+      userId: this.state.marks,
     };
 
-    this.props.actions.apiCall({
-      url: 'https://mywebsite.com/api/forms',
-      method: 'POST',
-      data: myData,
-      callback: res => {
-        console.log('testing data from fake gallery api is-----', res);
+    // this.props.actions.apiCall({
+    //   url: 'https://jsonplaceholder.typicode.com/posts',
+    //   method: 'POST',
+    //   data: myData,
+    //   callback: res => {
+    //     console.log('testing data received after submitting frm-----', res);
 
-        if (res && res.message === 'Form Submitted') {
-          alert('Form Submitted');
+    //     if (res && (res.status === 200 || res.status === 201)) {
+    //       alert('Form Submitted');
+    //     } else {
+    //       alert('Form Not submitted');
+    //     }
+    //   },
+    // });
+
+    // this.props.actions.apiCall({
+    //   url: 'https://jsonplaceholder.typicode.com/posts/100',
+    //   method: 'PUT',
+    //   data: myData,
+    //   callback: res => {
+    //     console.log('testing data received after submitting frm-----', res);
+
+    //     if (res && (res.status === 200 || res.status === 201)) {
+    //       alert('Form Updated');
+    //     } else {
+    //       alert('Form Not Updated');
+    //     }
+    //   },
+    // });
+
+    this.props.actions.apiCall({
+      url: 'https://jsonplaceholder.typicode.com/posts/75',
+      method: 'DELETE',
+      callback: res => {
+        console.log('testing data received after submitting frm-----', res);
+
+        if (res && (res.status === 200 || res.status === 201)) {
+          alert('Post Deleted');
         } else {
-          alert('Form Not submitted');
+          alert('Post not deleted');
         }
       },
     });
