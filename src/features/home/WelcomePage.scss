@@ -1,1 +1,44 @@
 @import '../../styles/mixins';
+
+
+.carousel.carousel-slider {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    height: 50vh;
+
+
+    .control-dots .dot {
+       
+        background: black;
+        height: 20px;
+        width: 20px;
+    }
+
+
+    
+}
+
+
+
+.latest-items-container{
+
+    margin-top: 70px;
+
+
+    .all-latest-items {
+        display: flex;
+    
+        .latest-item {
+            min-width: 20%;
+    
+            img {
+                width: 90%;
+                height: 100%;
+            }
+        }
+    }
+
+}
+
+
