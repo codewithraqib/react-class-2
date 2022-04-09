@@ -1,6 +1,3 @@
-const initialState = {
-  // myBlogs: null,
-  websiteName: 'Localhost',
-};
+const initialState = {};
 
 export default initialState;

@@ -1,15 +1,6 @@
-import { Contact, Gallery, SingleBlogItem, WelcomePage } from './';
-import Blogs from './Blogs';
-import Projects from './Projects';
+import { WelcomePage } from './';
 
 export default {
   path: '',
-  childRoutes: [
-    { path: 'welcome', component: WelcomePage, isIndex: true },
-    { path: 'projects', component: Projects, isIndex: false },
-    { path: 'blogs', component: Blogs, isIndex: false },
-    { path: 'blog', component: SingleBlogItem, isIndex: false },
-    { path: 'gallery', component: Gallery, isIndex: false },
-    { path: 'contact-us', component: Contact, isIndex: false },
-  ],
+  childRoutes: [{ path: 'welcome', component: WelcomePage, isIndex: true }],
 };

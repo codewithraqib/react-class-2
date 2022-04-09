@@ -1,9 +1,6 @@
 import initialState from './initialState';
-import { reducer as storeBlogs } from './storeBlogs';
-import { reducer as setBlogInFocus } from './setBlogInFocus';
-import { reducer as setGallery } from './setGallery';
 
-const reducers = [storeBlogs, setBlogInFocus, setGallery];
+const reducers = [];
 
 export default function reducer(state = initialState, action) {
   let newState;
