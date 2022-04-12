@@ -102,10 +102,10 @@ a:hover {
 }
 
 .content-wrapper {
-  max-width: 80vw;
-  /* margin: auto; */
-  margin-left: 10vw;
-  margin-right: 10vw;
+  max-width: 90vw;
+  margin: auto;
+  /* margin-left: 10vw;
+  margin-right: 10vw; */
 }
 
 .dot-line-container {
