@@ -1,6 +1,7 @@
 import initialState from './initialState';
+import { reducer as setProductInFocus } from './setProductInFocus';
 
-const reducers = [];
+const reducers = [setProductInFocus];
 
 export default function reducer(state = initialState, action) {
   let newState;

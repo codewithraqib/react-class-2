@@ -1,0 +1,33 @@
+.item {
+
+    border: 1px solid #ccc;
+    // border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 460px;
+
+    .img-container {
+
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 80%;
+            // width: auto;
+            height: 80%;
+        }
+    }
+
+    .product-name {
+        margin-top: 5%;
+    }
+
+    .product-price {
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+    }
+}

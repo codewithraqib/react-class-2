@@ -29,9 +29,17 @@ class Shop extends React.PureComponent {
     });
   };
 
+  setProduct = item => {
+    this.props.actions.setProductInFocus(item);
+
+    setTimeout(() => {
+      this.props.history.push('/product');
+    }, 500);
+  };
+
   renderItem = (item, index) => {
     return (
-      <div key={index} className="item">
+      <div key={index} className="item" onClick={() => this.setProduct(item)}>
         <div className="img-container">
           <img src={item.image} alt="" />
         </div>
