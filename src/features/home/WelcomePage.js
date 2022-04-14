@@ -28,10 +28,31 @@ class WelcomePage extends React.PureComponent {
 
       latestProducts: null,
     };
+
+    this.getCategories();
+    this.getProductList();
   }
   componentDidMount() {
     console.log('All props are----', this.props);
+  }
 
+  getCategories = () => {
+    this.props.actions.apiCall({
+      url: 'https://fakestoreapi.com/products/categories',
+      method: 'GET',
+      callback: res => {
+        console.log('response from categories api is ===', res);
+
+        if (res && res.data && res.data.length > 0) {
+          this.setState({
+            categories: res.data,
+          });
+        }
+      },
+    });
+  };
+
+  getProductList = () => {
     this.props.actions.apiCall({
       url: 'https://fakestoreapi.com/products',
       method: 'GET',
@@ -46,7 +67,7 @@ class WelcomePage extends React.PureComponent {
         }
       },
     });
-  }
+  };
 
   renderLatestItem = (item, index) => {
     return (
@@ -62,10 +83,26 @@ class WelcomePage extends React.PureComponent {
           <span>{'Price: ' + item.price}</span>
           <span>{'Rating: ' + item.rating.rate + ` (${item.rating.count})`}</span>
         </div>
+      </div>
+    );
+  };
 
-        {/* <div className="product-rating">
-          <span>{'Rating: ' + item.rating.rate + ` (${item.rating.count})`}</span>
-        </div> */}
+  goToCategory = item => {
+    this.props.history.push(`/category/${item}`);
+  };
+
+  renderCategoryItem = (item, index) => {
+    console.log('Item and index is----', item, index);
+
+    return (
+      <div className="category-item" key={index} onClick={() => this.goToCategory(item)}>
+        <div className="img-container">
+          <img src="/images/slider/img1.jpg" alt="" />
+        </div>
+
+        <div className="category-name">
+          <span>{item}</span>
+        </div>
       </div>
     );
   };
@@ -84,6 +121,16 @@ class WelcomePage extends React.PureComponent {
               );
             })}
         </Carousel>
+
+        <section className="latest-items-section">
+          <div className="latest-items-container content-wrapper">
+            <div className="title">Categories</div>
+            <div className="all-category-items ">
+              {this.state.categories &&
+                this.state.categories.map((item, index) => this.renderCategoryItem(item, index))}
+            </div>
+          </div>
+        </section>
 
         <section className="latest-items-section">
           <div className="latest-items-container content-wrapper">

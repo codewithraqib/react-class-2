@@ -1,6 +1,11 @@
-import { WelcomePage } from './';
+import { CategoryItems, Product, Shop, WelcomePage } from './';
 
 export default {
   path: '',
-  childRoutes: [{ path: 'welcome', component: WelcomePage, isIndex: true }],
+  childRoutes: [
+    { path: 'welcome', component: WelcomePage, isIndex: true },
+    { path: 'category/:items', component: CategoryItems, isIndex: false },
+    { path: 'shop', component: Shop, isIndex: false },
+    { path: 'product', component: Product, isIndex: false },
+  ],
 };
