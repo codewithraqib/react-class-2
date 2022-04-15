@@ -9,7 +9,24 @@ class App extends React.PureComponent {
     super(props);
 
     this.state = {};
+
+    this.setDataBack();
   }
+
+  setDataBack = () => {
+    let productInFocus = localStorage.getItem('productInFocus');
+    console.log('prod in foc is----', productInFocus);
+
+    if (productInFocus) {
+      this.props.actions.setProductInFocus(JSON.parse(productInFocus));
+    }
+
+    let cartItems = localStorage.getItem('cartItems');
+
+    if (cartItems) {
+      this.props.actions.setCartItem(JSON.parse(cartItems));
+    }
+  };
 
   render() {
     return (

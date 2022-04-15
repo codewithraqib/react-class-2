@@ -35,11 +35,20 @@ class CategoryItems extends React.PureComponent {
     });
   };
 
+  setProduct = item => {
+    this.props.actions.setProductInFocus(item);
+    localStorage.setItem('productInFocus', JSON.stringify(item));
+
+    setTimeout(() => {
+      this.props.history.push('/product');
+    }, 500);
+  };
+
   renderLatestItem = (item, index) => {
     console.log('Item received is----', item);
 
     return (
-      <div key={index} className="latest-item">
+      <div key={index} className="latest-item" onClick={() => this.setProduct(item)}>
         <div className="img-container">
           <img src={item.image} alt="" />
         </div>

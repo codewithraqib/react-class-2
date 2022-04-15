@@ -86,6 +86,11 @@ a:hover {
   font-family: 'Poppins-Light', sans-serif;
 }
 
+
+.button:hover{
+  cursor: pointer;
+}
+
 .white-text {
   color: #ffffff;
   font-family: 'Poppins-Light', sans-serif;

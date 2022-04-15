@@ -69,9 +69,19 @@ class WelcomePage extends React.PureComponent {
     });
   };
 
+  setProduct = item => {
+    this.props.actions.setProductInFocus(item);
+
+    localStorage.setItem('productInFocus', JSON.stringify(item));
+
+    setTimeout(() => {
+      this.props.history.push('/product');
+    }, 500);
+  };
+
   renderLatestItem = (item, index) => {
     return (
-      <div key={index} className="latest-item">
+      <div key={index} className="latest-item" onClick={() => this.setProduct(item)}>
         <div className="img-container">
           <img src={item.image} alt="" />
         </div>

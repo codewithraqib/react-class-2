@@ -1,7 +1,8 @@
 import initialState from './initialState';
 import { reducer as setProductInFocus } from './setProductInFocus';
+import { reducer as setCartItem } from './setCartItem';
 
-const reducers = [setProductInFocus];
+const reducers = [setProductInFocus, setCartItem];
 
 export default function reducer(state = initialState, action) {
   let newState;

@@ -31,6 +31,7 @@ class Shop extends React.PureComponent {
 
   setProduct = item => {
     this.props.actions.setProductInFocus(item);
+    localStorage.setItem('productInFocus', JSON.stringify(item));
 
     setTimeout(() => {
       this.props.history.push('/product');

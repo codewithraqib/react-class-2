@@ -21,22 +21,61 @@ class Product extends React.PureComponent {
     }
   }
 
+  addProductToCart = () => {
+    // let cartItems = [];
+
+    let oldCartItems = [];
+
+    if (this.props.home.cartItems && this.props.home.cartItems.length > 0) {
+      oldCartItems = [...this.props.home.cartItems];
+    }
+
+    oldCartItems.push(this.state.item);
+
+    this.props.actions.setCartItem(oldCartItems);
+
+    console.log('old cart items are----', oldCartItems);
+
+    localStorage.setItem('cartItems', JSON.stringify(oldCartItems));
+
+    setTimeout(() => {
+      this.props.history.push('/cart');
+    }, 500);
+  };
+
   render() {
     let item = this.state.item;
     console.log('State is---', this.state);
     return item ? (
-      <div>
+      <div className="item-container">
         <div className="item">
           <div className="img-container">
             <img src={item.image} alt="" />
           </div>
+        </div>
+
+        <div className="item-details">
           <div className="product-name">
-            <span>{item.title.substr(0, 50) + '...'}</span>
+            <span>{item.title}</span>
+          </div>
+
+          <div className="product-desc">
+            <span>{item.description}</span>
           </div>
 
           <div className="product-price">
             <span>{'Price: ' + item.price}</span>
             <span>{'Rating: ' + item.rating.rate + ` (${item.rating.count})`}</span>
+          </div>
+
+          <div className="buttons">
+            <div className="add-to-cart button" onClick={this.addProductToCart}>
+              <span>Add To Cart</span>
+            </div>
+
+            <div className="add-to-wishlist button">
+              <span>Add To Wishlist</span>
+            </div>
           </div>
         </div>
       </div>
