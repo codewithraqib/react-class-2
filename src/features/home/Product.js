@@ -24,13 +24,24 @@ class Product extends React.PureComponent {
   addProductToCart = () => {
     // let cartItems = [];
 
+    let itemFound = false;
+
     let oldCartItems = [];
 
     if (this.props.home.cartItems && this.props.home.cartItems.length > 0) {
       oldCartItems = [...this.props.home.cartItems];
     }
 
-    oldCartItems.push(this.state.item);
+    oldCartItems.forEach(item => {
+      if (item.id === this.state.item.id) {
+        itemFound = true;
+      }
+    });
+
+    if (!itemFound) {
+      //we add new item now to old items to make a new array of items
+      oldCartItems.push(this.state.item);
+    }
 
     this.props.actions.setCartItem(oldCartItems);
 
