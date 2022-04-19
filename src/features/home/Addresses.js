@@ -97,7 +97,7 @@ class Addresses extends React.PureComponent {
 
         <div className="buttons-container">
           <div className="button checkout" onClick={this.goToPaymentPage}>
-            <span>Proceed to Checkout </span>
+            <span>Proceed to Payment </span>
           </div>
         </div>
       </div>
