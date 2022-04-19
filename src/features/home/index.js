@@ -4,3 +4,5 @@ export { default as CategoryItems } from './CategoryItems';
 export { default as Shop } from './Shop';
 export { default as Product } from './Product';
 export { default as Cart } from './Cart';
+export { default as Addresses } from './Addresses';
+export { default as Payment } from './Payment';

@@ -1,0 +1,21 @@
+.address-container{
+    .address-form{
+        .two-inputs{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .payment-methods{
+
+        .payment-item{
+            height: 50px;
+            background-color: #ccc;
+            margin: 10px 0px;
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border-radius: 6px;
+        }
+    }
+}

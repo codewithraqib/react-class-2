@@ -1,4 +1,4 @@
-import { Cart, CategoryItems, Product, Shop, WelcomePage } from './';
+import { Addresses, Cart, CategoryItems, Payment, Product, Shop, WelcomePage } from './';
 
 export default {
   path: '',
@@ -8,5 +8,7 @@ export default {
     { path: 'shop', component: Shop, isIndex: false },
     { path: 'product', component: Product, isIndex: false },
     { path: 'cart', component: Cart, isIndex: false },
+    { path: 'addresses', component: Addresses, isIndex: false },
+    { path: 'payment', component: Payment, isIndex: false },
   ],
 };

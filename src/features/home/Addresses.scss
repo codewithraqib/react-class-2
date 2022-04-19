@@ -1,0 +1,21 @@
+.address-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+
+
+
+    .buttons-container{
+        display: flex;
+        justify-content: flex-end;
+        padding: 30px 0px;
+
+        .button{
+            color: white;
+            background-color: green;
+        }
+    }
+
+
+}
