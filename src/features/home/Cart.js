@@ -23,12 +23,10 @@ class Cart extends React.PureComponent {
         <div className="img-container">
           <img src={item.image} alt="" />
         </div>
-
         <div className="row-1">
           <div className="cart-item-title">
             <span>{item.title}</span>
           </div>
-
           <div className="row-1-internal">
             <div className="price">
               <span>{'Price: ' + item.price}</span>
