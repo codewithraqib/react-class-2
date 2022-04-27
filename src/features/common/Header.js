@@ -25,14 +25,19 @@ class Header extends React.PureComponent {
         </div>
         <div className="links-container">
           <div className="links-container-inner">
-            {this.props.links.map(link => {
+            {this.props.links && this.props.links.map(link => {
               return (
-                <span
-                  style={link.active ? { backgroundColor: 'black' } : {}}
-                  onClick={() => this.props.onLinkClick(link)}
-                  className="link-item"
-                >
-                  {link.name}
+                <span className='inner-links-container'>
+                  <span
+                    style={link.active ? { backgroundColor: 'black' } : {}}
+                    onClick={() => this.props.onLinkClick(link)}
+                    className="link-item"
+                  >
+                    {link.name}
+                  </span>
+
+                    {link.count > 0 ?   <span className='link-count'>{link.count}</span> : null}
+                 
                 </span>
               );
             })}

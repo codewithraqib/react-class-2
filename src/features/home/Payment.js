@@ -55,19 +55,43 @@ class Payment extends React.PureComponent {
         case 'name':
           this.setState({ nameError: 'Please enter name!' });
           break;
-        case 'address':
-          this.setState({ addressError: 'Please enter your address!' });
-          break;
-        case 'house_number':
-          this.setState({ houseNumberError: 'Please enter your House Number!' });
-          break;
-        case 'state':
-          this.setState({ stateError: 'Please enter your State!' });
-          break;
+          case 'expiry':
+            this.setState({ expiryDateError: 'Please enter expiry date!' });
+            break;
 
         default:
           break;
       }
+    }else{
+
+      switch (type) {
+        
+        case 'expiry':
+          if(text.length === 4){
+            this.setState({ expiryDate: text.substring(0,2)+"/"+text.substring(2,4) });
+          }else if(text.length< 4){
+            this.setState({expiryDateError:"Enter corrrect date in ddmm format"})
+          }
+            
+          break;
+
+          case "cvv":
+            if(text.length > 3){
+              this.setState({cvv : text.substring(0,3)})
+            }
+            break;
+
+            case "card_number":
+            if(text.length > 16){
+              this.setState({cardNumber : text.substring(0,16)})
+            }
+            break;
+
+
+        default:
+          break;
+      }
+
     }
   };
 
@@ -80,16 +104,31 @@ class Payment extends React.PureComponent {
         errors++;
       }
       if (!this.state.expiryDate) {
-        this.setState({ expiryDateError: 'enter your expiry date' });
+        this.setState({ expiryDateError: 'enter card expiry date' });
         errors++;
+      }else{
+        if(this.state.expiryDate.length !== 5){
+          this.setState({ expiryDateError: 'Please enter correct date and time' });
+        errors++;
+        }
       }
       if (!this.state.cvv) {
         this.setState({ cvvError: 'enter your cvv' });
         errors++;
+      }else{
+        if(this.state.cvv.length !== 3){
+          this.setState({ cvvError: 'cvv should be 3 digits' });
+        errors++;
+        }
       }
       if (!this.state.cardNumber) {
         this.setState({ cardNumberError: 'enter your card number' });
         errors++;
+      }else{
+        if(this.state.cardNumber.length !== 16){
+          this.setState({ cardNumberError: 'card number should be 16 digits' });
+        errors++;
+        }
       }
     } else if (this.state.paymentMethodToShow === 2) {
       if (!this.state.upiId) {
@@ -122,11 +161,12 @@ class Payment extends React.PureComponent {
         <div className="two-inputs">
           <MyInput
             placeholder={'Expiry Date'}
-            type={'number'}
+            type={'text'}
             width={'48%'}
             onChange={text => this.onChange('expiry', text)}
             onBlur={text => this.onBlur('expiry', text)}
-            error={this.state.expiryError}
+            error={this.state.expiryDateError}
+            value={this.state.expiryDate}
           />
 
           <MyInput
@@ -136,6 +176,7 @@ class Payment extends React.PureComponent {
             onChange={text => this.onChange('cvv', text)}
             onBlur={text => this.onBlur('cvv', text)}
             error={this.state.cvvError}
+            value={this.state.cvv}
           />
         </div>
 
@@ -145,6 +186,7 @@ class Payment extends React.PureComponent {
           onChange={text => this.onChange('card_number', text)}
           onBlur={text => this.onBlur('card_number', text)}
           error={this.state.cardNumberError}
+          value={this.state.cardNumber}
         />
       </div>
     );
