@@ -43,6 +43,13 @@ class App extends React.PureComponent {
 
   setDataBack = () => {
 
+
+    let wishlistItems = localStorage.getItem("wishlistItems")
+
+    if(wishlistItems){
+      this.props.actions.setWishlistItem(JSON.parse(wishlistItems));
+    }
+
     let cartItems = localStorage.getItem('cartItems');
 
     if (cartItems) {
