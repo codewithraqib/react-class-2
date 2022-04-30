@@ -54,6 +54,43 @@ class Product extends React.PureComponent {
     }, 500);
   };
 
+
+
+
+  addProductToWishlist = () => {
+
+
+    let itemFound = false;
+
+    let oldWishlistItems = [];
+
+    if (this.props.home.wishlistItems && this.props.home.wishlistItems.length > 0) {
+      oldWishlistItems = [...this.props.home.wishlistItems];
+    }
+
+    oldWishlistItems.forEach(item => {
+      if (item.id === this.state.item.id) {
+        itemFound = true;
+      }
+    });
+
+    if (!itemFound) {
+      //we add new item now to old items to make a new array of items
+      oldWishlistItems.push(this.state.item);
+    }
+
+    this.props.actions.setWishlistItem(oldWishlistItems);
+
+    console.log('old cart items are----', oldWishlistItems);
+
+    localStorage.setItem('wishlistItems', JSON.stringify(oldWishlistItems));
+
+    setTimeout(() => {
+      this.props.history.push('/wishlist');
+    }, 500);
+
+  }
+
   render() {
     let item = this.state.item;
     console.log('State is---', this.state);
@@ -84,7 +121,7 @@ class Product extends React.PureComponent {
               <span>Add To Cart</span>
             </div>
 
-            <div className="add-to-wishlist button">
+            <div className="add-to-wishlist button" onClick={this.addProductToWishlist}>
               <span>Add To Wishlist</span>
             </div>
           </div>

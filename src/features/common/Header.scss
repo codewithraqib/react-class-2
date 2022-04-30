@@ -17,19 +17,42 @@
     justify-content: flex-end;
 
     .links-container-inner {
-      .link-item {
-        padding: 10px;
-        background-color: grey;
-        margin-left: 10px;
-        border-radius: 8px;
-        color: white;
-      }
 
-      .link-item:hover {
-        cursor: pointer;
-        background-color: black;
-        color: red;
+      .inner-links-container{
+
+        position: relative;
+
+        .link-item {
+          padding: 10px;
+          background-color: grey;
+          margin-left: 10px;
+          border-radius: 8px;
+          color: white;
+        }
+  
+        .link-item:hover {
+          cursor: pointer;
+          background-color: black;
+          color: red;
+        }
+
+
+        .link-count{
+          background-color: green;
+          min-width: 24px;
+          min-height: 20px;
+          padding: 6px;
+          border-radius: 30px;
+          position: absolute;
+          top: -20px;
+          right: -10px;
+          font-size: 10px;
+          display: flex;
+          justify-content: center;
+          color: white;
+        }
       }
+      
     }
   }
 }
@@ -50,11 +73,29 @@
 
       .links-container-inner {
         display: flex;
-        .link-item {
-          display: flex;
-          width: 80px;
-          justify-content: center;
-          margin: 0px 5px !important;
+        
+
+
+        .inner-links-container{
+
+          .link-item {
+            display: flex;
+            width: 80px;
+            justify-content: center;
+            margin: 0px 5px !important;
+          }
+
+          span{
+            background-color: red;
+            height: 10px;
+            width: 10px;
+
+          }
+          // .link-count{
+          //   background-color: red;
+          //   height: 10px;
+          //   width: 10px;
+          // }
         }
 
         // justify-content: center;

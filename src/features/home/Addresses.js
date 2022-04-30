@@ -60,7 +60,31 @@ class Addresses extends React.PureComponent {
   };
 
   goToPaymentPage = () => {
-    this.props.history.push('/payment');
+    let errors = 0;
+
+    if (!this.state.name) {
+      this.setState({ nameError: 'Please enter name!' });
+      errors++;
+    }
+
+    if (!this.state.address) {
+      this.setState({ addressError: 'Please enter your address!' });
+      errors++;
+    }
+
+    if (!this.state.houseNumber) {
+      this.setState({ houseNumberError: 'Please enter your House Number!' });
+      errors++;
+    }
+
+    if (!this.state.state) {
+      this.setState({ stateError: 'Please enter your State!' });
+      errors++;
+    }
+
+    if (errors == 0) {
+      this.props.history.push('/payment');
+    }
   };
 
   render() {
