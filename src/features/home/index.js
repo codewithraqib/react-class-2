@@ -7,3 +7,4 @@ export { default as Cart } from './Cart';
 export { default as Addresses } from './Addresses';
 export { default as Payment } from './Payment';
 export { default as Wishlist } from './Wishlist';
+export { default as AboutUs } from './AboutUs';

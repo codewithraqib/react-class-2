@@ -8,6 +8,28 @@
   }
 }
 
+
+
+.footer-section-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .footer-item{
+    display: flex;
+    flex-direction: column;
+
+    span{
+      cursor: pointer;
+
+      &:hover{
+        color: red;
+      }
+    }
+
+    
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .desc {
     padding-left: 30px;
