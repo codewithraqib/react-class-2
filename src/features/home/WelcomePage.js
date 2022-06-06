@@ -132,37 +132,41 @@ class WelcomePage extends React.PureComponent {
             })}
         </Carousel>
 
-        <section className="latest-items-section">
-          <div className="latest-items-container content-wrapper">
-            <div className="title">Categories</div>
-            <div className="all-category-items ">
-              {this.state.categories &&
-                this.state.categories.map((item, index) => this.renderCategoryItem(item, index))}
+        <div className="content-wrapper">
+          <section className="latest-items-section">
+            <div className="latest-items-container content-wrapper">
+              <div className="title">Categories</div>
+              <div className="all-category-items ">
+                {this.state.categories &&
+                  this.state.categories.map((item, index) => this.renderCategoryItem(item, index))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="latest-items-section">
-          <div className="latest-items-container content-wrapper">
-            <div className="title">Latest Products</div>
-            <div className="all-latest-items ">
-              {this.state.latestProducts &&
-                this.state.latestProducts.map((item, index) => this.renderLatestItem(item, index))}
+          <section className="latest-items-section">
+            <div className="latest-items-container content-wrapper">
+              <div className="title">Latest Products</div>
+              <div className="all-latest-items ">
+                {this.state.latestProducts &&
+                  this.state.latestProducts.map((item, index) =>
+                    this.renderLatestItem(item, index),
+                  )}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="latest-items-section">
-          <div className="latest-items-container content-wrapper">
-            <div className="title">Most Selling Products</div>
-            <div className="all-latest-items ">
-              {this.state.mostSellingProducts &&
-                this.state.mostSellingProducts.map((item, index) =>
-                  this.renderLatestItem(item, index),
-                )}
+          <section className="latest-items-section">
+            <div className="latest-items-container content-wrapper">
+              <div className="title">Most Selling Products</div>
+              <div className="all-latest-items ">
+                {this.state.mostSellingProducts &&
+                  this.state.mostSellingProducts.map((item, index) =>
+                    this.renderLatestItem(item, index),
+                  )}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     );
   }

@@ -1,13 +1,16 @@
 .cart-items-container{
-    height: 100vh;
 
     display: flex;
     flex-direction: column;
     // justify-content: space-between;
+    // overflow: scroll;
+
 
 
 
     .items-container{
+        height: 100%;
+        overflow: scroll;
 
         .cart-item {
         
