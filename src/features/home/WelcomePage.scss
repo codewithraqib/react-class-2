@@ -79,16 +79,18 @@
     justify-content: space-between;
 
     .category-item {
+        
         .img-container {
             img {
                 width: 90%;
-                border-radius: 6px;
+                border-radius: 50px;
             }
         }
 
         .category-name{
             text-align: center;
             margin-top: 10px;
+            font-size:12px;
         }
     }
 

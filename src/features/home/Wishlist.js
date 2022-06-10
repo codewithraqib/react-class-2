@@ -54,7 +54,7 @@ class Wishlist extends React.PureComponent {
     return (
       <div className="cart-item">
         <div className="img-container">
-          <img src={item.image} alt="" />
+          <img src={"http://localhost/ecom-std/ecom-std/admin/postimages/"+item.product_image} alt="" />
         </div>
         <div className="row-1">
           <div className="cart-item-title">

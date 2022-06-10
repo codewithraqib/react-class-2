@@ -38,14 +38,14 @@ class WelcomePage extends React.PureComponent {
 
   getCategories = () => {
     this.props.actions.apiCall({
-      url: 'https://fakestoreapi.com/products/categories',
+      url: 'http://localhost/ecom-std/ecom-std/api/categories.php',
       method: 'GET',
       callback: res => {
         console.log('response from categories api is ===', res);
 
-        if (res && res.data && res.data.length > 0) {
+        if (res && res.data && res.data.data && res.data.data.length > 0) {
           this.setState({
-            categories: res.data,
+            categories: res.data.data,
           });
         }
       },
@@ -54,15 +54,15 @@ class WelcomePage extends React.PureComponent {
 
   getProductList = () => {
     this.props.actions.apiCall({
-      url: 'https://fakestoreapi.com/products',
+      url: 'http://localhost/ecom-std/ecom-std/api/products.php',
       method: 'GET',
       callback: res => {
         console.log('response from api is ===', res);
 
-        if (res && res.data && res.data.length > 0) {
+        if (res && res.data &&  res.data.data && res.data.data.length > 0) {
           this.setState({
-            latestProducts: res.data.slice(1, 6),
-            mostSellingProducts: res.data.slice(6, 11),
+            latestProducts: res.data.data.slice(1, 6),
+            mostSellingProducts: res.data.data.slice(6, 11),
           });
         }
       },
@@ -83,22 +83,22 @@ class WelcomePage extends React.PureComponent {
     return (
       <div key={index} className="latest-item" onClick={() => this.setProduct(item)}>
         <div className="img-container">
-          <img src={item.image} alt="" />
+          <img src={"http://localhost/ecom-std/ecom-std/admin/postimages/"+item.product_image} alt="" />
         </div>
         <div className="product-name">
-          <span>{item.title.substr(0, 30) + '...'}</span>
+          <span>{item.product_name.substr(0, 30) + '...'}</span>
         </div>
 
         <div className="product-price">
           <span>{'Price: ' + item.price}</span>
-          <span>{'Rating: ' + item.rating.rate + ` (${item.rating.count})`}</span>
+          {/* <span>{'Rating: ' + item.rating.rate + ` (${item.rating.count})`}</span> */}
         </div>
       </div>
     );
   };
 
   goToCategory = item => {
-    this.props.history.push(`/category/${item}`);
+    this.props.history.push(`/category/${item.id}`);
   };
 
   renderCategoryItem = (item, index) => {
@@ -111,7 +111,7 @@ class WelcomePage extends React.PureComponent {
         </div>
 
         <div className="category-name">
-          <span>{item}</span>
+          <span>{item.Categoryname}</span>
         </div>
       </div>
     );

@@ -21,14 +21,16 @@ class CategoryItems extends React.PureComponent {
 
   getProductList = () => {
     this.props.actions.apiCall({
-      url: `https://fakestoreapi.com/products/category/${this.props.match.params.items}`,
-      method: 'GET',
+      // url: `https://fakestoreapi.com/products/category/${this.props.match.params.items}`,
+      url:"http://localhost/ecom-std/ecom-std/api/product-category-wise.php",
+      method: 'POST',
+      data : {category_id : this.props.match.params.items},
       callback: res => {
         console.log('response from api is ===', res);
 
-        if (res && res.data && res.data.length > 0) {
+        if (res && res.data && res.data.data) {
           this.setState({
-            items: res.data,
+            items: res.data.data,
           });
         }
       },
@@ -53,12 +55,12 @@ class CategoryItems extends React.PureComponent {
           <img src={item.image} alt="" />
         </div>
         <div className="product-name">
-          <span>{item.title.substr(0, 30) + '...'}</span>
+          <span>{item.title}</span>
         </div>
 
         <div className="product-price">
           <span>{'Price: ' + item.price}</span>
-          <span>{'Rating: ' + item.rating.rate + ` (${item.rating.count})`}</span>
+          {/* <span>{'Rating: ' + item.rating.rate + ` (${item.rating.count})`}</span> */}
         </div>
       </div>
     );

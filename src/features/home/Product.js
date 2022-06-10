@@ -98,22 +98,22 @@ class Product extends React.PureComponent {
       <div className="item-container">
         <div className="item">
           <div className="img-container">
-            <img src={item.image} alt="" />
+            <img src={"http://localhost/ecom-std/ecom-std/admin/postimages/"+item.product_image} alt="" />
           </div>
         </div>
 
         <div className="item-details">
           <div className="product-name">
-            <span>{item.title}</span>
+            <span>{item.product_name}</span>
           </div>
 
           <div className="product-desc">
-            <span>{item.description}</span>
+            <span>{item.product_description}</span>
           </div>
 
           <div className="product-price">
             <span>{'Price: ' + item.price}</span>
-            <span>{'Rating: ' + item.rating.rate + ` (${item.rating.count})`}</span>
+            <span>{'Rating: ' + "4.5(100)"}</span>
           </div>
 
           <div className="buttons">
