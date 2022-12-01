@@ -2,10 +2,10 @@ import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-const ReviewCard = props => {
+const ReviewCard = (props) => {
   let review = props.review;
 
-  const decideRating = rating => {
+  const decideRating = (rating) => {
     let source = `images/${rating}star.jpeg`;
     return <img className="stars" src={source} alt="stars" />;
 
@@ -27,10 +27,10 @@ const ReviewCard = props => {
 
   return (
     <div className="review-card">
-      <div className="name">{review.name}</div>
-      <div className="rating"> {decideRating(review.rating)}</div>
+      <div className="name font13 bold-text">{review.name}</div>
+      <div className="rating "> {decideRating(review.rating)}</div>
       {/* <div className="rating">{review.rating}</div> */}
-      <div className="desc">{review.desc}</div>
+      <div className="desc font9 bold-text">{review.desc}</div>
     </div>
   );
 };
@@ -41,14 +41,14 @@ class Reviews extends React.PureComponent {
       <div className="reviews-container">
         <Carousel
           infiniteLoop={true}
-          autoPlay={true}
-          interval={3000}
+          autoPlay={false}
+          interval={30000}
           // onChange={() => console.log('Slide changed')}
           thumbWidth={200}
           width={'100%'}
         >
           {this.props.reviews &&
-            this.props.reviews.map(review => {
+            this.props.reviews.map((review) => {
               return <ReviewCard review={review} something={1} azbc={true} />;
             })}
         </Carousel>

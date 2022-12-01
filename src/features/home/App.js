@@ -60,12 +60,12 @@ class App extends React.PureComponent {
     this.retreiveDataFromLocalStorage();
   }
 
-  onNavItemClick = navItem => {
+  onNavItemClick = (navItem) => {
     console.log('Nav item clicked is newwwwww----', navItem);
 
     let newLinks = [];
 
-    this.state.links.map(val => {
+    this.state.links.map((val) => {
       if (val.name === navItem.name) {
         newLinks.push({ ...val, active: true });
       } else {
@@ -90,7 +90,7 @@ class App extends React.PureComponent {
     return (
       <div className="home-app">
         <Header
-          logo={'/images/logo.jpeg'}
+          logo={'/images/logo.png'}
           links={this.state.links}
           onLinkClick={this.onNavItemClick}
           onLogoClick={() => this.onLogoClick()}

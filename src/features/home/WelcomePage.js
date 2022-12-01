@@ -26,7 +26,7 @@ class WelcomePage extends React.PureComponent {
           icon: 'book',
           name: 'Certification Courses',
           desc:
-            'We Teach C | C++ | JAVA | PHP | JavaScript | Android Development | Flutter Development',
+            'We Teach C | C++ | JAVA | PHP | JavaScript | Android Development | Flutter Development | React ad React Native ',
         },
         {
           icon: 'chart',
@@ -60,11 +60,11 @@ class WelcomePage extends React.PureComponent {
           desc: 'A School Management System',
         },
         {
-          name: 'SKUAST',
-          desc: 'Farmer Farm Management',
+          name: 'Apple Doc(SKUAST)',
+          desc: 'Farmer Farm Management System',
         },
         {
-          name: 'Dolphin Website',
+          name: 'IDPS Website',
           desc: 'A School Website',
         },
         {
@@ -76,27 +76,22 @@ class WelcomePage extends React.PureComponent {
       reviews: [
         {
           name: 'EaseMySchool',
-          rating: 1,
+          rating: 5,
           desc: 'A School Management System',
         },
         {
-          name: 'SKUAST',
-          rating: 2,
+          name: 'Apple Doc',
+          rating: 4,
           desc: 'Farmer Farm Management',
         },
         {
           name: 'Dolphin Website',
-          rating: 3,
+          rating: 4,
           desc: 'A School Website',
         },
         {
           name: 'Cheezymezy',
           rating: 4,
-          desc: 'Restaurant Aggerigator System',
-        },
-        {
-          name: 'Somethig',
-          rating: 5,
           desc: 'Restaurant Aggerigator System',
         },
       ],
@@ -132,14 +127,14 @@ class WelcomePage extends React.PureComponent {
             // image={'images/hero-back.jpg'}
           />
 
-          <MainStructureComponent
+          {/* <MainStructureComponent
             title="Our Team"
             description={
               'We are 4 members in a team working in dynamic and different spheres of development.'
             }
             // image={'images/hero-back.jpg'}
             members={this.state.members}
-          />
+          /> */}
 
           <MainStructureComponent
             title="Our Projects | Products"

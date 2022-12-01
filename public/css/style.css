@@ -1,26 +1,153 @@
 * {
   margin: 0;
   padding: 0;
+  /* box-sizing: border-box; */
 }
 
 @font-face {
-  font-family: 'Poppins-Light';
-  src: url('../fonts/Poppins-Light.ttf');
+  font-family: 'AvenirNextLTPro-Light';
+  src: url('../fonts/AvenirLTStd-Light.otf');
   font-weight: normal;
   font-style: normal;
-}
-@font-face {
-  font-family: 'Poppins-Regular';
-  src: url('../fonts/Poppins-Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
+  font-display: swap
 }
 
 @font-face {
-  font-family: 'Poppins-Bold';
-  src: url('../fonts/Poppins-Bold.ttf');
+  font-family: 'AvenirNextLTPro-Regular';
+  src: url('../fonts/AvenirNextLTPro-Regular.otf');
   font-weight: normal;
   font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Demi';
+  src: url('../fonts/AvenirNextLTPro-Demi.otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Bold';
+  src: url('../fonts/AvenirNextLTPro-Demi.otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: 'AvenirNextLTPro-Black';
+  src: url('../fonts/AvenirLTStd-Black.otf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap
+}
+
+
+
+.font55-75 {
+  font-size: 55.75pt !important;
+}
+
+.font7 {
+  font-size: 7pt !important;
+}
+
+.font8 {
+  font-size: 8pt !important;
+}
+
+.font9 {
+  font-size: 9pt !important;
+}
+
+.font10-42 {
+  font-size: 10.42pt !important;
+}
+
+.font10 {
+  font-size: 10pt !important;
+}
+
+.font11 {
+  font-size: 11pt !important;
+}
+
+.font12 {
+  font-size: 12pt !important;
+}
+
+.font13 {
+  font-size: 13pt !important;
+}
+
+.font13-25 {
+  font-size: 13.25pt !important;
+}
+
+.font14 {
+  font-size: 14pt !important;
+}
+
+.font15 {
+  font-size: 15pt !important;
+}
+
+.font16 {
+  font-size: 16pt !important;
+}
+
+.font18 {
+  font-size: 18pt !important;
+}
+
+.font20 {
+  font-size: 20pt !important;
+}
+
+.font22 {
+  font-size: 22pt !important;
+}
+
+.font24 {
+  font-size: 24pt !important;
+}
+
+.font26 {
+  font-size: 26pt !important;
+}
+
+.font30 {
+  font-size: 30pt !important;
+}
+
+.font32 {
+  font-size: 32pt !important;
+}
+
+.font33 {
+  font-size: 33pt !important;
+}
+
+.font39 {
+  font-size: 39pt !important;
+}
+
+.font40 {
+  font-size: 40pt !important;
+}
+
+.font42 {
+  font-size: 42pt !important;
+}
+
+.font47 {
+  font-size: 47pt !important;
+}
+
+.font48 {
+  font-size: 48pt !important;
 }
 
 body {
@@ -132,6 +259,9 @@ a:hover {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px 2px;
+  border: none !important;
+  /* box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff !important; */
+  background: #e0e0e0;
 }
 
 .items-center {

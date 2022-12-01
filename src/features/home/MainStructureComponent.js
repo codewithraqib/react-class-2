@@ -23,7 +23,7 @@ class MainStructureComponent extends React.PureComponent {
           ) : null}
 
           <div className="desc-container">
-            <div className="ml20">
+            <div className="">
               {props.title ? (
                 <div className="title-underline">
                   <div>
@@ -44,7 +44,7 @@ class MainStructureComponent extends React.PureComponent {
 
         {props.services ? (
           <div className="service-cards-container">
-            {props.services.map(service => {
+            {props.services.map((service) => {
               return <ServiceCard service={service} />;
             })}
           </div>
@@ -52,7 +52,7 @@ class MainStructureComponent extends React.PureComponent {
 
         {props.members ? (
           <div className="team-cards-container">
-            {props.members.map(member => {
+            {props.members.map((member) => {
               return <MemberCard service={member} />;
             })}
           </div>
@@ -60,7 +60,7 @@ class MainStructureComponent extends React.PureComponent {
 
         {props.projects ? (
           <div className="project-cards-container">
-            {props.projects.map(project => {
+            {props.projects.map((project) => {
               return <ProjectCard project={project} />;
             })}
           </div>

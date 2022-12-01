@@ -1,23 +1,24 @@
 .reviews-container {
-  display: flex;
-  
+  // display: flex;
 
   .review-card {
     // min-width: 80vw;
+    height: 130px;
 
     .rating {
+      margin: 10px 0px;
       .stars {
         width: 100px;
       }
     }
+    .desc {
+    }
   }
 }
 
-@media only screen and (max-width: 600px){
-
+@media only screen and (max-width: 600px) {
   .reviews-container {
     display: flex;
     justify-content: center;
   }
-
 }
